@@ -1,0 +1,17 @@
+class Solution {
+    public void rotate(int[] num, int k) {
+        int len=num.length;
+        k%=len;
+        int[] tempval=new int[k];
+        for(int i=0;i<k;i++){
+            tempval[i]=num[(len-k)+i];
+        }
+        for(int i=len-1;i>=k;i--){
+            num[i]=num[i-k];
+        }
+        for(int i=0;i<k;i++){
+            num[i]=tempval[i];
+        }
+        
+    }
+}
