@@ -1,0 +1,12 @@
+class Solution {
+    public long zeroFilledSubarray(int[] nums) {
+        long val=0,count=0;
+        for(int n:nums){
+            if(n==0){
+                count++;
+                val+=count;
+            }else count=0;
+        }
+        return val;
+    }
+}
