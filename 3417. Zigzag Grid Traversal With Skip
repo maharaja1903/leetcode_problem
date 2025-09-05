@@ -1,0 +1,24 @@
+class Solution {
+    public List<Integer> zigzagTraversal(int[][] arr) {
+        List<Integer> res =new ArrayList<>();
+        int count=0;
+        boolean flag=true;
+        for(int i=0;i<arr.length;i++){
+            if(flag){
+                for(int j=0;j<arr[i].length;j++){
+                    
+                    if(count%2==0)res.add(arr[i][j]);
+                    count++;
+                }
+                flag=false;
+            }else{
+                for(int j=arr[i].length-1;j>=0;j--){
+                    if(count%2==0)res.add(arr[i][j]);
+                    count++;
+                }
+                flag=true;
+            }
+        }
+        return res;
+    }
+}
