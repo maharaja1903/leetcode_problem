@@ -1,0 +1,25 @@
+class Solution {
+    public boolean isPalindrome(String s) {
+        if(s.length()==1)return true;
+        char[] arr=s.toUpperCase().toCharArray();
+        // boolean flag=false;
+        int st=0,end=arr.length-1;
+        while(st<end){
+            
+            if((arr[st]>='A' && arr[st] <= 'Z' ) || (arr[st]>='0' && arr[st] <='9')){
+                if((arr[end]>='A' && arr[end] <= 'Z') || (arr[end]>='0' && arr[end] <='9')){
+                    if(arr[st]==arr[end]){
+                        st++;
+                        end--;
+                        // flag=true;
+                    }
+                    else return false;
+                }else   end--;
+
+            }
+            else st++;
+        }
+      
+        return true;
+    }
+}
