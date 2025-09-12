@@ -1,0 +1,22 @@
+class Solution {
+    public String addStrings(String num1, String num2) {
+        String str="";
+        int n1=num1.length()-1;
+        int n2=num2.length()-1;
+        int carry=0,sum=0;
+        while(n1>=0 || n2>=0 ||carry>0){
+            int a=(n1>=0)?num1.charAt(n1--)-'0':0;
+            int b=(n2>=0)?num2.charAt(n2--)-'0':0;
+            sum=carry+a+b;
+            if(sum>9){
+                str=(sum)%10+str;
+                carry=(sum)/10;
+            }else{
+                str=(sum)+str;
+                carry=0;
+            }
+        }
+    //    if(carry>0)str=carry+str;
+        return str;
+    }
+}
