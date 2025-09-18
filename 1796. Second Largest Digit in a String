@@ -1,0 +1,13 @@
+class Solution {
+    public int secondHighest(String s) {
+        Set<Integer> temp=new HashSet<>();
+        for(int i=0;i<s.length();i++){
+            char c=s.charAt(i);
+            if(Character.isDigit(c))temp.add(Character.getNumericValue(c));
+        }
+        List<Integer> re=new ArrayList<>(temp);
+        Collections.sort(re);
+        if(re.size()<2)return -1;
+        return re.get(re.size()-2);
+    }
+}
